@@ -26,5 +26,4 @@ jobs:
 
     - name: Test by developer
       run: |
-        cd api_yamdb/
-        python manage.py test
+        pytest
