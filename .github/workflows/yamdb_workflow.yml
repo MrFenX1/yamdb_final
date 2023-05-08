@@ -57,6 +57,7 @@ jobs:
           key: ${{ secrets.SERVER_KEY }}
           passphrase: ${{ secrets.SERVER_PASSWORD }}
           script: |
+            sudo systemctl stop nginx
             sudo docker-compose down
             sudo docker pull ${{ secrets.USERNAME_DOCKERHUB }}/yamdb_final:latest
             sudo rm .env
