@@ -7,7 +7,7 @@ services:
     volumes:
       - /var/lib/postgresql/data/
     env_file:
-      - .env
+      - ./.env
   web:
     image: mrfenx1/yamdb_final:latest
     restart: always
@@ -16,6 +16,8 @@ services:
       - media_value:/app/media/
     depends_on:
       - db
+    env_file:
+      - ./.env
   nginx:
     image: nginx:1.21.3-alpine
 
